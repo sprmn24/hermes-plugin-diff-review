@@ -1,0 +1,6 @@
+name: diff-review
+version: 1.0.0
+description: Analyze git diffs for common code quality issues — debug prints, hardcoded secrets, bare except clauses, and unresolved TODOs.
+author: sprmn24
+provides_tools:
+  - diff_review
