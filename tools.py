@@ -23,7 +23,7 @@ def _get_git_diff(base: str = "HEAD", target: Optional[str] = None) -> str:
     if target:
         cmd.append(target)
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
         if result.returncode != 0:
             logger.warning("git diff exited with code %d: %s", result.returncode, result.stderr)
             return ""
